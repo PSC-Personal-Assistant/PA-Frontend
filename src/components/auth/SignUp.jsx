@@ -6,6 +6,8 @@ import { Select } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 
 function Signup(props) {
@@ -59,7 +61,7 @@ function Signup(props) {
               const result = response.data
                if (result.status === true){
                 toast.success("Registration Successful")
-                navigate("/login")
+                // navigate("/login")
                }else{
                 toast.error("Registration failed")
                }
@@ -116,71 +118,114 @@ function Signup(props) {
 
         return (
         <div className='lg:grid grid-cols-2'>
+            <div className='w-full bg-primaryColor'>
 
+            </div>
 
-            <div className='W-[80%] lg:w-[90%] lg:m-0 h-screen '>
-                <div className='w-[80%] md:w-[70%]  lg:w-[90%] m-auto'>
+            <div className='W-[100%] lg:w-[100%] lg:m-0 h-screen  '>
+                <div className='w-[80%] md:w-[70%]  lg:w-[90%] mx-auto'>
                     <div  className='mt-8'>
-                        <p className='xl:w-[65%] lg:w-[70%] text-base sm:text-2xl'>Signup and join other users 
-                        in automating their networks </p>
+                        <p className='lg:w-[100%] text-base sm:text-2xl text-center'>Hey, Register to Get Assistant ASAP !!  </p>
                     </div>
                     
-                    <hr className='w-1/2 mb-2'/>
+                    <hr className='w-1/2 my-2 mx-auto'/>
 
-                    <small className='text-base  mt-4 text-[#467BFB]'> 
-                        Or fill out your details
-                    </small>
+{/* SIGN UP BTNS */}
+                    <div className='w-[100%] flex justify-center items-center mt-8 gap-4'>
+                      <h3 className='text-[14px] text-[tanik]'>Sign Up with</h3>
+                      <a href="">
+                        <button className='bg-primaryColor text-white text-[14px] p-2 rounded-[8px]'>
+                          <GoogleIcon />
+                        </button>
+                      </a>
+
+                      <a href="">
+                        <button className=' border border-primaryColor rounded-[8px] py-1 px-4'>
+                          <span className='font-[700] text-primaryColor text-2xl'>f</span>
+                        </button>
+                      </a>
+
+                    </div>
+
+                    <div className='flex justify-between items-center mt-10'>
+                      <div className='h-[1px] w-1/3 bg-gray-200'></div>
+                      <small className='text-[14px] text-[tanik] text-gray-500'> 
+                          Or fill out your details
+                      </small>
+                      <div className='h-[1px] w-1/3 bg-gray-200'></div>
+                    </div>
+
 
 
                     <form onSubmit={handleSubmit}>
 
-                        <div className='lg:w-[80%] md:w-[60%]'>
+                        <div className='lg:w-[100%] md:w-[100%]'>
 
-                            <div className='mt-4'>
-                                <label>First Name</label>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="firstName" value={formData.firstName}  onChange={handleInputChange} placeholder='First Name'  />
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>First Name</p> */}
+                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="text" name="firstName" value={formData.firstName}  onChange={handleInputChange} placeholder='First Name'  />
                                 {errors.firstName && (<p className="text-[#ff0000]">{errors.firstName}</p> )}
                             </div>
 
-                            <div className='mt-4'>
-                                <label>Last Name</label>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="lastName"  value={formData.lastName} onChange={handleInputChange} placeholder='Last Name'  required/>
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>Last Name</p> */}
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="text" name="lastName"  value={formData.lastName} onChange={handleInputChange} placeholder='Last Name'  required/>
                                 {errors.lastName && (<p className="text-[#ff0000]">{errors.lastName}</p> )}
 
                             </div>
 
-                            <div className='mt-4'>
-                                <label>Email</label>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>Email</p> */}
+                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
                                 {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
                             </div>
 
-                            {/* <div className='mt-4'>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="username" value={formData.username} onChange={handleInputChange} placeholder="Desired username"  required/>
-                                {errors.username && (<p className="text-[#ff0000]">{errors.username}</p> )}
-                            </div> */}
-
-                            <div className='mt-4'>
-                              <label>Phone</label>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="08123456789" required/>
+                            <div className='mt-4 w-full px-[4rem]'>
+                              {/* <p className='font-[500] text-[tanik] text-[14px]'>Phone</p> */}
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="08123456789" required/>
                                 {errors.phone && (<p className="text-[#ff0000]">{errors.phone}</p> )}
                             </div>
 
 
-                            <div className='mt-4'>
-                                <label>Password</label>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>Password</p> */}
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
                                 {errors.password && (<p className="text-[#ff0000]">{errors.password}</p> )}
                                 
                             </div>
-                            <div className='mt-4'>
-                                <label>Confirm Password</label>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="password" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirm Password" required  name="confirmPassword"/>
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>Confirm Password</p> */}
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="password" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirm Password" required  name="confirmPassword"/>
                                 {errors.confirmPassword && (<p className="">{errors.confirmPassword}</p> )}
                             </div>
 
-                            <div className='mb-4 mt-4 bg-[#467BFB]  text-center w-[50%] rounded-lg p-1 text-[#fff] '>
-                                    <input type="submit"/>                
+                            <div className='mt-4 w-full px-[4rem] flex items-center m-auto'>
+                                <ChakraProvider>
+                                <Checkbox colorScheme='twitter' >
+                                </Checkbox>
+                                </ChakraProvider>
+                                <small  className='ml-2'>
+                                    I accept the  
+                                    <Link className='ml-1 text-[#467BFB]' to="/termsofuse">
+                                        Terms of Use
+                                    </Link> and  
+                                    <Link className='ml-2 text-[#467BFB]' to="/privacy">
+                                        Privacy Policy
+                                    </Link>
+                                </small>
+                            </div>
+
+
+                            <div className=' w-full px-[4rem]'>
+                                    <input className='mb-4 mt-4 bg-primaryColor  text-center w-[100%] rounded-lg p-1 text-[#fff] ' type="submit"/>    
+                                               
+                            </div>
+
+                            <div className='mt-4 w-full px-[4rem] text-right'>
+                              <small className='italic'>
+                                   Already have an account? 
+                                  <Link  className='ml-2 text-[#467BFB]' to="/login">Sign In</Link>
+                                  </small>
                             </div>
 
                         </div>
@@ -189,25 +234,8 @@ function Signup(props) {
                     
 
 
-                    <div className='mt-8 mb-4 flex items-center m-auto'>
-                        <ChakraProvider>
-                        <Checkbox colorScheme='twitter' >
-                        </Checkbox>
-                        </ChakraProvider>
-                        <span  className='text-sm sm:text-4 ml-2'>
-                            I accept the  
-                            <Link className='ml-1 text-[#467BFB]' to="/termsofuse">
-                                Terms of Use
-                            </Link> and  
-                            <Link className='ml-2 text-[#467BFB]' to="/privacy">
-                                Privacy Policy
-                            </Link>
-                        </span>
-                    </div>
-                    <div>
-                        Already have an account? 
-                        <Link  className='ml-2 text-[#467BFB]' to="/login">Sign in</Link>
-                    </div>
+
+
                 </div>
             </div>
         </div>

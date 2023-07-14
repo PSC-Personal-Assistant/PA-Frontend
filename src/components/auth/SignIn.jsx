@@ -128,7 +128,7 @@ function Login(props) {
             <div className='W-[100%] lg:w-[100%] lg:m-0 h-screen flex justify-center items-center '>
                 <div className='w-[80%] md:w-[70%]  lg:w-[90%] mx-auto'>
                     <div  className='mt-8'>
-                        <p className='lg:w-[100%] text-base sm:text-2xl text-center'>Hey, Sign In to Get Help Instantly <span className='text-primaryColor font-[700]'>!</span>  </p>
+                        <p className='lg:w-[100%] text-2xl text-center'>Hey, Sign In to Get Help Instantly <span className='text-primaryColor font-[700]'>!</span>  </p>
                     </div>
                     
                     <hr className='w-1/2 my-2 mx-auto'/>
@@ -151,11 +151,11 @@ function Login(props) {
                     </div>
 
                     <div className='flex justify-between items-center mt-10'>
-                      <div className='h-[1px] w-1/3 bg-gray-200'></div>
+                      <div className='h-[1px] w-1/4 md:w-1/3 bg-gray-200'></div>
                       <small className='text-[14px] text-[tanik] text-gray-500'> 
                           Or fill out your details
                       </small>
-                      <div className='h-[1px] w-1/3 bg-gray-200'></div>
+                      <div className='h-[1px] w-1/4 md:w-1/3 bg-gray-200'></div>
                     </div>
 
 
@@ -165,7 +165,7 @@ function Login(props) {
                         <div className='lg:w-[100%] md:w-[100%]'>
 
 
-                            <div className='mt-4 w-full px-[4rem]'>
+                            <div className='mt-4 w-full lg:px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>Email</p> */}
                                 <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
                                 {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
@@ -174,7 +174,7 @@ function Login(props) {
 
 
 
-                            <div className='mt-4 w-full px-[4rem]'>
+                            <div className='mt-4 w-full lg:px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>Password</p> */}
                                 <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
                                 {errors.password && (<p className="text-[#ff0000]">{errors.password}</p> )}
@@ -183,12 +183,12 @@ function Login(props) {
 
 
 
-                            <div className=' w-full px-[4rem]'>
+                            <div className=' w-full lg:px-[4rem]'>
                                     <input className='mb-4 mt-4 bg-primaryColor  text-center w-[100%] rounded-lg p-1 text-[#fff] ' type="submit"/>    
                                                
                             </div>
 
-                            <div className='mt-4 w-full px-[4rem] text-right'>
+                            <div className='mt-4 w-full lg:px-[4rem] text-right'>
                               <small className='italic'>
                                    Don't have an account? 
                                   <Link  className='ml-2 text-primaryColor' to="/signUp">Sign Up</Link>

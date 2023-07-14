@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
 
 
 function Signup(props) {
@@ -61,7 +60,7 @@ function Signup(props) {
               const result = response.data
                if (result.status === true){
                 toast.success("Registration Successful")
-                // navigate("/login")
+                navigate("/signin")
                }else{
                 toast.error("Registration failed")
                }
@@ -122,10 +121,10 @@ function Signup(props) {
 
             </div>
 
-            <div className='W-[100%] lg:w-[100%] lg:m-0 h-screen  '>
-                <div className='w-[80%] md:w-[70%]  lg:w-[90%] mx-auto'>
+            <div className='W-[100%] lg:w-[100%] lg:m-0 h-screen flex justify-center items-center'>
+                <div className='w-[80%] md:w-[70%]  lg:w-[90%] mx-auto my-auto'>
                     <div  className='mt-8'>
-                        <p className='lg:w-[100%] text-base sm:text-2xl text-center'>Hey, Register to Get Assistant ASAP !!  </p>
+                        <p className='lg:w-[100%] text-base sm:text-2xl text-center'>Hey, Sign Up to Get Instant Help <span className='text-primaryColor font-[700]'>!</span>  </p>
                     </div>
                     
                     <hr className='w-1/2 my-2 mx-auto'/>
@@ -163,39 +162,39 @@ function Signup(props) {
 
                             <div className='mt-4 w-full px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>First Name</p> */}
-                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="text" name="firstName" value={formData.firstName}  onChange={handleInputChange} placeholder='First Name'  />
+                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="text" name="firstName" value={formData.firstName}  onChange={handleInputChange} placeholder='First Name'  />
                                 {errors.firstName && (<p className="text-[#ff0000]">{errors.firstName}</p> )}
                             </div>
 
                             <div className='mt-4 w-full px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>Last Name</p> */}
-                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="text" name="lastName"  value={formData.lastName} onChange={handleInputChange} placeholder='Last Name'  required/>
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="text" name="lastName"  value={formData.lastName} onChange={handleInputChange} placeholder='Last Name'  required/>
                                 {errors.lastName && (<p className="text-[#ff0000]">{errors.lastName}</p> )}
 
                             </div>
 
                             <div className='mt-4 w-full px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>Email</p> */}
-                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
+                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
                                 {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
                             </div>
 
                             <div className='mt-4 w-full px-[4rem]'>
                               {/* <p className='font-[500] text-[tanik] text-[14px]'>Phone</p> */}
-                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="08123456789" required/>
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="08123456789" required/>
                                 {errors.phone && (<p className="text-[#ff0000]">{errors.phone}</p> )}
                             </div>
 
 
                             <div className='mt-4 w-full px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>Password</p> */}
-                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
                                 {errors.password && (<p className="text-[#ff0000]">{errors.password}</p> )}
                                 
                             </div>
                             <div className='mt-4 w-full px-[4rem]'>
                                 {/* <p className='font-[500] text-[tanik] text-[14px]'>Confirm Password</p> */}
-                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-lg drop-shadow-primaryColor' type="password" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirm Password" required  name="confirmPassword"/>
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="password" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirm Password" required  name="confirmPassword"/>
                                 {errors.confirmPassword && (<p className="">{errors.confirmPassword}</p> )}
                             </div>
 
@@ -206,10 +205,10 @@ function Signup(props) {
                                 </ChakraProvider>
                                 <small  className='ml-2'>
                                     I accept the  
-                                    <Link className='ml-1 text-[#467BFB]' to="/termsofuse">
+                                    <Link className='ml-1 text-primaryColor' to="/termsofuse">
                                         Terms of Use
                                     </Link> and  
-                                    <Link className='ml-2 text-[#467BFB]' to="/privacy">
+                                    <Link className='ml-2 text-primaryColor' to="/privacy">
                                         Privacy Policy
                                     </Link>
                                 </small>
@@ -224,7 +223,7 @@ function Signup(props) {
                             <div className='mt-4 w-full px-[4rem] text-right'>
                               <small className='italic'>
                                    Already have an account? 
-                                  <Link  className='ml-2 text-[#467BFB]' to="/login">Sign In</Link>
+                                  <Link  className='ml-2 text-primaryColor' to="/login">Sign In</Link>
                                   </small>
                             </div>
 

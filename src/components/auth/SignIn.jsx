@@ -5,6 +5,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Spinner } from '@chakra-ui/react';
 import { AuthContext } from './authContext';
+import GoogleIcon from '@mui/icons-material/Google';
 
 // import { SHA256 } from 'crypto-js';
 
@@ -120,55 +121,90 @@ function Login(props) {
 
     return (
         <div className='lg:grid grid-cols-2'>
-            <div className='md:h-screen lg:block hidden lg:overflow-hidden '>
-                <img className='md:h-screen lg:h-auto' src="images/guy2.png" alt="" />
+            <div className='w-full bg-primaryColor'>
+
             </div>
-            <div className='W-[80%] lg:w-[80%] lg:m-0 h-screen '>
-                <div className=' w-[80%] md:w-[70%]  lg:w-[90%] m-auto'>
-                    <div className='mb-4 mt-4 '>
-                        <img className='' src="images/Group.png" alt="welcome" />
+
+            <div className='W-[100%] lg:w-[100%] lg:m-0 h-screen flex justify-center items-center '>
+                <div className='w-[80%] md:w-[70%]  lg:w-[90%] mx-auto'>
+                    <div  className='mt-8'>
+                        <p className='lg:w-[100%] text-base sm:text-2xl text-center'>Hey, Sign In to Get Help Instantly <span className='text-primaryColor font-[700]'>!</span>  </p>
                     </div>
-                    <Link className='mt-12 text-base sm:text-xl text-[#467BFB]' to="/privacy">
-                        Sign-in with the options below
-                    </Link>              
-                    <div className='w-24 mt-4 mb-4 flex justify-between'>
-                        <img src="images/facebook-color 1.png" alt="facebook logo" />
-                        <img src="images/google-color 1.png" alt=" google color" />
+                    
+                    <hr className='w-1/2 my-2 mx-auto'/>
+
+{/* SIGN UP BTNS */}
+                    <div className='w-[100%] flex justify-center items-center mt-8 gap-4'>
+                      <h3 className='text-[14px] text-[tanik]'>Sign In with</h3>
+                      <a href="">
+                        <button className='bg-primaryColor text-white text-[14px] p-2 rounded-[8px]'>
+                          <GoogleIcon />
+                        </button>
+                      </a>
+
+                      <a href="">
+                        <button className=' border border-primaryColor rounded-[8px] py-1 px-4'>
+                          <span className='font-[700] text-primaryColor text-2xl'>f</span>
+                        </button>
+                      </a>
+
                     </div>
-                    <hr className='w-[70%]  mb-2'/>
-                    <small className='sm:text-xl text-base  mt-4 text-[#467BFB]'> 
-                        Or use your registered email
-                    </small>
-                    <form method='post' onSubmit={handleSubmit}>
-                        <div className='lg:w-[80%] md:w-[80%]'>
-                            
-                            <div className='mt-4'>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="email" value={formData.email} onChange={handleInputChange} placeholder="email"  required/>
-                                    {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
+
+                    <div className='flex justify-between items-center mt-10'>
+                      <div className='h-[1px] w-1/3 bg-gray-200'></div>
+                      <small className='text-[14px] text-[tanik] text-gray-500'> 
+                          Or fill out your details
+                      </small>
+                      <div className='h-[1px] w-1/3 bg-gray-200'></div>
+                    </div>
+
+
+
+                    <form onSubmit={handleSubmit}>
+
+                        <div className='lg:w-[100%] md:w-[100%]'>
+
+
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>Email</p> */}
+                                <input className='p-2 w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
+                                {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
                             </div>
 
 
-                            <div className='mt-4'>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
+
+
+                            <div className='mt-4 w-full px-[4rem]'>
+                                {/* <p className='font-[500] text-[tanik] text-[14px]'>Password</p> */}
+                                <input className='p-2  w-full placeholder:text-lighter placeholder:text-[12px] rounded-md  outline-none drop-shadow-md drop-shadow-primaryColor' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
                                 {errors.password && (<p className="text-[#ff0000]">{errors.password}</p> )}
+                                
                             </div>
-                        </div>
 
-                        <div className='mb-4 mt-4 bg-[#467BFB]  text-center w-[50%] rounded-lg p-1 text-[#fff]'>
-                                {/* <input type="submit"  /> */}
-                                <button type='submit' onClick={handleClick} disabled={isButtonDisabled}>
-                                  { loading? <div> Loading ... <Spinner height='20px' width="20px"/></div> : 'Submit' }
-                                </button>
 
+
+                            <div className=' w-full px-[4rem]'>
+                                    <input className='mb-4 mt-4 bg-primaryColor  text-center w-[100%] rounded-lg p-1 text-[#fff] ' type="submit"/>    
                                                
                             </div>
-                            
+
+                            <div className='mt-4 w-full px-[4rem] text-right'>
+                              <small className='italic'>
+                                   Don't have an account? 
+                                  <Link  className='ml-2 text-primaryColor' to="/signUp">Sign Up</Link>
+                                  </small>
+                            </div>
+
+                        </div>
 
                     </form>
+                    
 
-                   
+
+
+
+                </div>
             </div>
-           </div>
         </div>
     );
 }

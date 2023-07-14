@@ -57,15 +57,12 @@ function Login(props) {
         } else {
             setLoading(true)
             const data = {
-                "process": "login",
-                "logintoken": formData.username,
-                "password": formData.password, 
-                "captcha": "",
-                "source": "",
-            }
+            email: formData.email,
+            password: formData.password
+          }
     
             try {
-              const response = await axios.post('', JSON.stringify(data), {
+              const response = await axios.post('https://pa.cleverapps.io/accounts/login', JSON.stringify(data), {
                 headers: {'Content-Type' : 'application/json'}
               });
               console.log(data)
@@ -106,11 +103,11 @@ function Login(props) {
 
       const validateFormData = (data) => {
         const errors = {};
-        if (!data.username) {
-            errors.username = 'Please enter your username';
-          } else if (!/^[a-zA-Z0-9_]{3,16}$/.test(data.username)) {
-            errors.username = 'username is invalid';
-          }
+        if (!data.email) {
+          errors.email = 'Please enter your email address';
+        } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+          errors.email = 'Please enter a valid email address';
+        }
         if (!data.password) {
           errors.password = 'Please enter your password';
         } else if (data.password.length < 8) {
@@ -146,8 +143,8 @@ function Login(props) {
                         <div className='lg:w-[80%] md:w-[80%]'>
                             
                             <div className='mt-4'>
-                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="username" value={formData.username} onChange={handleInputChange} placeholder="Desired username"  required/>
-                                    {errors.username && (<p className="text-[#ff0000]">{errors.username}</p> )}
+                                <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="email" value={formData.email} onChange={handleInputChange} placeholder="email"  required/>
+                                    {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
                             </div>
 
 

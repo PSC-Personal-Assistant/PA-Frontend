@@ -18,7 +18,7 @@ function Signup(props) {
         firstName: '',
         lastName: '',
         email: '',
-        username: '',
+        // username: '',
         phone: '',
         password: '',
         confirmPassword: '',
@@ -41,24 +41,21 @@ function Signup(props) {
         if (Object.keys(validationErrors).length > 0) {
           setErrors(validationErrors);
         } else {
-            const data = {
-                "process": "register",
-                "username": formData.username,
-                "pass_confirmation": "demo",
-                "email": formData.email,
-                "first_name": formData.firstName,
-                "last_name": formData.lastName,
-                "phone": formData.phone,
-                "country": "161",
-                "plan": plan,
-                "home_country_code": "234",
-                "ref_id": "54d1f566"
-            }
+            
+          const data = {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          password: formData.password,
+          is_assistant: false
+        }
     
+        console.log(data)
             try {
-              const response = await axios.post('', data, {
-                headers: {'Content-Type' : 'application/json'}
-              });
+              
+              const response = await axios.post('https://pa.cleverapps.io/accounts/register', JSON.stringify(data));
+              console.log(response)
               const result = response.data
                if (result.status === true){
                 toast.success("Registration Successful")
@@ -90,11 +87,11 @@ function Signup(props) {
         } else if (!/\S+@\S+\.\S+/.test(data.email)) {
           errors.email = 'Please enter a valid email address';
         }
-        if (!data.username) {
-            errors.username = 'Please enter your username';
-          } else if (!/^[a-zA-Z0-9_]{3,16}$/.test(data.username)) {
-            errors.username = 'username is invalid';
-          }
+        // if (!data.username) {
+        //     errors.username = 'Please enter your username';
+        //   } else if (!/^[a-zA-Z0-9_]{3,16}$/.test(data.username)) {
+        //     errors.username = 'username is invalid';
+        //   }
           if (!data.phone) {
             errors.phone = 'Please enter your phone';
           } else if (data.phone.length < 11 || !/^\d{11}$/.test(data.phone)) {
@@ -140,38 +137,44 @@ function Signup(props) {
                         <div className='lg:w-[80%] md:w-[60%]'>
 
                             <div className='mt-4'>
+                                <label>First Name</label>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="firstName" value={formData.firstName}  onChange={handleInputChange} placeholder='First Name'  />
                                 {errors.firstName && (<p className="text-[#ff0000]">{errors.firstName}</p> )}
                             </div>
 
                             <div className='mt-4'>
+                                <label>Last Name</label>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="lastName"  value={formData.lastName} onChange={handleInputChange} placeholder='Last Name'  required/>
                                 {errors.lastName && (<p className="text-[#ff0000]">{errors.lastName}</p> )}
 
                             </div>
 
                             <div className='mt-4'>
+                                <label>Email</label>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email"  required/>
                                 {errors.email && (<p className="text-[#ff0000]">{errors.email}</p> )}
                             </div>
 
-                            <div className='mt-4'>
+                            {/* <div className='mt-4'>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="text" name="username" value={formData.username} onChange={handleInputChange} placeholder="Desired username"  required/>
                                 {errors.username && (<p className="text-[#ff0000]">{errors.username}</p> )}
-                            </div>
+                            </div> */}
 
                             <div className='mt-4'>
+                              <label>Phone</label>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="tel" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="08123456789" required/>
                                 {errors.phone && (<p className="text-[#ff0000]">{errors.phone}</p> )}
                             </div>
 
 
                             <div className='mt-4'>
+                                <label>Password</label>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="Password" name="password" value={formData.password} onChange={handleInputChange} placeholder="Enter password" required/>
                                 {errors.password && (<p className="text-[#ff0000]">{errors.password}</p> )}
                                 
                             </div>
                             <div className='mt-4'>
+                                <label>Confirm Password</label>
                                 <input className='p-2 w-4/5 placeholder:text-lighter rounded-md border-gray-500 border ' type="password" value={formData.confirmPassword} onChange={handleInputChange} placeholder="Confirm Password" required  name="confirmPassword"/>
                                 {errors.confirmPassword && (<p className="">{errors.confirmPassword}</p> )}
                             </div>

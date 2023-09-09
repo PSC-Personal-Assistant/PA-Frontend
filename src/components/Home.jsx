@@ -9,6 +9,7 @@ import Cat from './Cat'
 import Assemble from './Assemble'
 import Offer from './Offer'
 import Build from './Build'
+import Locate from './Locate'
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <Category/>
       <Offer/>
       <Build/>
+      <Locate/>
 
 
       <Footer/>

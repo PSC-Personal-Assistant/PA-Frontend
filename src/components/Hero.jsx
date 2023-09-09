@@ -8,9 +8,9 @@ import Vector from '../assets/hero-shape.png'
 
 const Hero = () => {
   return (
-    <div className='container  relative'>
+    <div className='container  relative h-[90vh] lg:h-[100vh]'>
       <img className='z-[-1] absolute bottom-0 left-0 h-[60%]' src={Vector} alt="hero-shape" />         
-      <section className='z-[999] h-[100vh] w-full  flex justify-center items-end '>
+      <section className='z-[999] h-full w-full  flex justify-center items-end '>
         {/* hero text */}
 
 

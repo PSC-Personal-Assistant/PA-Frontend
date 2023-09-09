@@ -4,7 +4,7 @@ import Dual from '../assets/dual-img.png'
 const Cat = () => {
   return (
     <div className='container py-[5rem]'>
-        <div className='w-full flex flex-col lg:flex-row justify-center items-center'>
+        <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-2'>
             <div className='flex-1'>
                 <img src={Dual} alt="" />
             </div>

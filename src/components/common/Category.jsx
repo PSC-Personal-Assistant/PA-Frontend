@@ -55,7 +55,7 @@ const Category = () => {
 
             {
               data.map((item, index)=>
-                <div key={index} className="bg-white shadow-md h-[80px] w-[150px] md:w-[200px] rounded-md my-2 p-2 border border-solid ">
+                <div key={index} className="bg-white shadow-md h-[80px] w-[9rem] sm:w-[12rem] md:w-[200px] rounded-md my-2 p-2 border border-solid ">
                 <div className='flex item-center gap-1'>
                             <div className='flex items-center justify-center'>
                                 <div className='rounded-full bg-[#393939] w-[10px] h-[10px]'></div>

@@ -4,23 +4,56 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
-/* 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 
 .container{
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.pryBtn{
+  background: #D14F0D;
+  color: #FFF;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px;
+  transition: all ease-in-out .3s;
+}
+
+.pryBtn:hover, .secBtn:hover{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.secBtn{
+  background: #12444A;
+  color: #FFF;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 8px;
+  transition: all ease-in-out .3s;
+}
+
+.shadow-left {
+  /* box-shadow: -6px 0px 8px 2px rgba(0, 0, 0, 0.3); */
+  box-shadow: -23px 4px 32px 0px #00000040;
+
+}
+
+/* box-shadow: 1px 4px 7px -1px #0000003D; */
+
+
+@media screen and (max-width: 1100px){
+  .container{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media screen and (max-width: 475px){
+  .container{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .pryBtn{
+    padding: 4px 6px;
+    margin-top: 1rem;
+  }
 }

@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-.container{
+.contain{
   padding-left: 8rem;
   padding-right: 8rem;
 }
@@ -48,18 +48,18 @@
 
 
 @media screen and (max-width: 1100px){
-  .container{
+  .contain{
     padding-left: 4rem;
     padding-right: 4rem;
   }
 }
 @media screen and (max-width: 475px){
-  .container{
+  .contain{
     padding-left: 2rem;
     padding-right: 2rem;
   }
   .pryBtn{
-    padding: 4px 6px;
+    padding: 4px 10px;
     margin-top: 1rem;
   }
 }

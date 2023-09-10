@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import Logo from '../../assets/PA-Logo.png'
 import LogoIcon from '../../assets/PA-ICON.png'
@@ -6,8 +6,11 @@ import LogoIcon from '../../assets/PA-ICON.png'
 // Refer to index.css for styling
 
 const Nav = () => {
+
+  const [open, setOpen] = useState(false)
+
   return (
-    <section className="px-[1rem] py-1 md:px-[3rem] w-full fixed flex justify-between items-center  z-[999] bg-[#FFF] shadow-sm">
+    <section className="px-[1rem] py-1 md:pr-[3rem] w-full fixed flex justify-between items-center  z-[999] bg-[#FFF] shadow-sm">
 
       {/* LOGO */}
       <div className=" flex space-x-14 justify-between items-center">
@@ -16,12 +19,34 @@ const Nav = () => {
 
 
         <div className="hidden lg:flex gap-8">
-          <NavLink to='/' className='font-[500] text-[14px]'>Get Assistance</NavLink>
+          <div onMouseEnter={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)} className='relative'>
+            <NavLink to='/'  className='font-[500] text-[14px]'>Get Assistance</NavLink>  
+            <div className={open? `rounded-lg border p-4 absolute flex gap-8 mt-4 bg-white`: 'hidden'}>
+              <div className='space-y-3'>
+                <div className=''>
+                 <h6 className='text-[12px] font-[500]'>Header 1</h6>
+                 <p className='text-[10px]'>Item1</p>                  
+                </div>
+                <div>
+                 <h6 className='text-[12px] font-[500]'>Header 1</h6>
+                 <p className='text-[10px]'>Item1</p>                  
+                </div>
+
+              </div>
+              <div>
+                 <h6 className='text-[12px] font-[500]'>Header 1</h6>
+                 <p className='text-[10px]'>Item1</p>
+              </div>
+            </div>          
+          </div>
+
           <NavLink to='/' className='font-[500] text-[14px]'>Give Assistance</NavLink>
           <NavLink to='/' className='font-[500] text-[14px]'>Service</NavLink>
           <NavLink to='/' className='font-[500] text-[14px]'>Explore</NavLink>
         </div>
       </div>
+
+
 
       {/* NAV LINKS */}
 

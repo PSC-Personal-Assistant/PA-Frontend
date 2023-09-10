@@ -1,17 +1,17 @@
 import React from 'react'
-import Dual from '../assets/dual-img.png'
+import Dual from '../../assets/dual-img.png'
 
 const Cat = () => {
   return (
-    <div className='container py-[5rem]'>
-        <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-2'>
+    <div className='contain py-[5rem]'>
+        <div className='w-full flex flex-col lg:flex-row justify-center items-center gap-6'>
             <div className='flex-1'>
-                <img src={Dual} alt="" />
+                <img className='w-full' src={Dual} alt="" />
             </div>
-            <div className='flex-1 md:pl-12'>
-                <div className='flex flex-col md:flex-row w-full gap-5'>
+            <div className='flex-1 lg:pl-12'>
+                <div className='flex flex-col md:flex-row 2xl:flex-col  w-full gap-5'>
                     {/*  */}
-                    <div className='rounded-md shadow-md p-3 w-full md:w-[40%] bg-[#F9FDFF] hover:border hover:border-[#D14F0D]'>
+                    <div className='rounded-md shadow-md p-3 w-full md:w-[40%] 2xl:w-[60%] bg-[#F9FDFF] hover:border hover:border-[#D14F0D]'>
                         <div className='flex item-center gap-1'>
                             <div className='flex items-center justify-center'>
                                 <div className='rounded-full bg-[#D14F0D] w-[10px] h-[10px]'></div>
@@ -39,7 +39,7 @@ const Cat = () => {
                     </div>
 
                 </div>
-                <div className='flex flex-col md:flex-row w-full gap-5 mt-5'>
+                <div className='flex flex-col md:flex-row w-full 2xl:flex-col gap-5 mt-5'>
                     {/*  */}
                     <div className='rounded-md shadow-md p-3 md:w-[60%] bg-[#F9FDFF] hover:border hover:border-[#D14F0D]'>
                         <div className='flex item-center gap-1'>
@@ -54,7 +54,7 @@ const Cat = () => {
                         </div>
                         <p className='text-[12px] text-[#393939]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, inventore!</p>
                     </div>
-                    <div className='rounded-md shadow-md p-3 md:w-[40%] bg-[#F9FDFF] hover:border hover:border-[#D14F0D]'>
+                    <div className='rounded-md shadow-md p-3 md:w-[40%] 2xl:w-[60%] bg-[#F9FDFF] hover:border hover:border-[#D14F0D]'>
                         <div className='flex item-center gap-1'>
                             <div className='flex items-center justify-center'>
                                 <div className='rounded-full bg-[#D14F0D] w-[10px] h-[10px]'></div>

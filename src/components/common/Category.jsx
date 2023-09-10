@@ -44,30 +44,36 @@ const data = [
   },
 ]
 
+
+
 const Category = () => {
   return (
     <section className="py-12 bg-[#12444A] bg-opacity-10 mt-[3rem]">
         {/* header */}
-        <div  className='container'>
+        <div  className='contain'>
         <h3 className='text-[#12444A] text-[28px] font-[700]'>Get Literally any form of Assistant</h3>
         <p className='text-[#12444A] text-[12px]'>Browse Category</p>
-          <div className='flex flex-wrap justify-between md:grid grid-col-2 md:grid-cols-3 lg:grid-cols-3 w-full py-3'>
+        <div className='flex bg-slate-100 mt-6 shadow-md md:w-[60%] lg:w-[40%] h-[50px] rounded-md' >
+            <input className='bg-none w-[88%] h-full  outline-none p-4 rounded-l-md' placeholder='Search Category' type="text" />
+            <button className='bg-[#D14F0D] color-white w-[12%] h-full rounded-r-md'></button>
+          </div>
+          <div className='flex flex-wrap justify-between md:grid grid-col-2 md:grid-cols-3 lg:grid-cols-4 w-full py-3'>
 
             {
               data.map((item, index)=>
-                <div key={index} className="bg-white shadow-md h-[80px] w-[9rem] sm:w-[12rem] md:w-[200px] rounded-md my-2 p-2 border border-solid ">
-                <div className='flex item-center gap-1'>
-                            <div className='flex items-center justify-center'>
-                                <div className='rounded-full bg-[#393939] w-[10px] h-[10px]'></div>
-                            </div>
-                            
-                            <div>
-                               <h4 className='font-[500] text-[14px]'>{item.title}</h4> 
-                            </div>
-                            
-                        </div>
-                        <p className='text-[12px] text-[#363836]'>{item.desc}</p>
-                </div>              
+                <button key={index} className="bg-white shadow-md text-left hover:bg-[#12444A] text-[12px] text-[#363836] px-4 hover:text-[#fff] h-[80px] w-[9rem] sm:w-[12rem] md:w-[200px] rounded-md my-2 p-2 border border-solid ">
+                  <div className='flex item-center gap-1'>
+                              <div className='flex items-center justify-center'>
+                                  <div className='rounded-full bg-[#393939] w-[10px] h-[10px]'></div>
+                              </div>
+                              
+                              <div>
+                                <h4 className='font-[500] text-[14px]'>{item.title}</h4> 
+                              </div>
+                              
+                  </div>
+                  {item.desc}
+                </button>              
               )
             }
 

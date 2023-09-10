@@ -12,18 +12,6 @@ export const AuthProvider = ({ children }) => {
   const [lastActiveTimestamp, setLastActiveTimestamp] = useState(Date.now());
   const [userData, setUserData] = useState(null);
 
-  
-  // const catchError = useErrorBoundary();
-
-  // // Code that might throw an error
-
-  // // Manually catch the error and trigger error handling
-  // const handleCatchError = () => {
-  //   catchError();
-  // };
-
-
-
   useEffect(() => {
     const handleActivity = () => {
       setLastActiveTimestamp(Date.now());
@@ -54,7 +42,7 @@ export const AuthProvider = ({ children }) => {
     const logoutAfterInactivity = setInterval(() => {
       const currentTime = Date.now();
       if (isLoggedIn && ((currentTime - lastActiveTimestamp) > MAX_INACTIVITY_DURATION)) {
-        logout();
+        handleLogout();
       }
     }, 1000);
 
@@ -65,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
 
 
-  const login = (token, userData) => {
+  const handleLogin = (token, userData) => {
     localStorage.setItem('token', token);
     localStorage.setItem('details', JSON.stringify(userData))
     setIsLoggedIn(true);
@@ -73,14 +61,14 @@ export const AuthProvider = ({ children }) => {
     setUserData(userData);
   };
 
-  const logout = () => {
+  const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('details');
     setIsLoggedIn(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, userData, login, logout}}>
+    <AuthContext.Provider value={{ isLoggedIn, userData, handleLogin, handleLogout}}>
       {children}
     </AuthContext.Provider>
   );

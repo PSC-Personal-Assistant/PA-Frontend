@@ -1,15 +1,13 @@
 import React from 'react'
 import Nav from './common/Nav'
-import { Link } from 'react-router-dom'
-import PA1 from '../assets/PA2.jpg'
 import Category from './common/Category'
 import Footer from './common/Footer'
-import Hero from './Hero'
-import Cat from './Cat'
-import Assemble from './Assemble'
-import Offer from './Offer'
-import Build from './Build'
-import Locate from './Locate'
+import Hero from './screens/Hero'
+import Cat from './screens/Cat'
+import Assemble from './screens/Assemble'
+import Offer from './screens/Offer'
+import Build from './screens/Build'
+import Locate from './screens/Locate'
 
 const Home = () => {
   return (
@@ -22,8 +20,6 @@ const Home = () => {
       <Offer/>
       <Build/>
       <Locate/>
-
-
       <Footer/>
     </div>
   )

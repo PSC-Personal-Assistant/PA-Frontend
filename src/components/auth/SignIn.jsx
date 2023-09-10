@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Spinner } from '@chakra-ui/react';
+// import { Spinner } from '@chakra-ui/react';
 import { AuthContext } from './authContext';
 import GoogleIcon from '@mui/icons-material/Google';
 
@@ -11,7 +11,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 function Login(props) {
 
-    const { login } = useContext(AuthContext);
+    const { handleLogin } = useContext(AuthContext);
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
     const [isButtonDisabled, setButtonDisabled] = useState(false);
@@ -77,7 +77,7 @@ function Login(props) {
                 const access_token = result.data.api_key 
                 hashToken(access_token)
                   .then(hashedToken => {
-                    login(hashedToken, userData);
+                    handleLogin(hashedToken, userData);
                     // fetchUserData(userData);
                     toast.success('Login successful');
                       navigate('/dashboard')
@@ -136,13 +136,13 @@ function Login(props) {
 {/* SIGN UP BTNS */}
                     <div className='w-[100%] flex justify-center items-center mt-8 gap-4'>
                       <h3 className='text-[14px] text-[tanik]'>Sign In with</h3>
-                      <a href="">
+                      <a href="/">
                         <button className='bg-primaryColor text-white text-[14px] p-2 rounded-[8px]'>
                           <GoogleIcon />
                         </button>
                       </a>
 
-                      <a href="">
+                      <a href="/">
                         <button className=' border border-primaryColor rounded-[8px] py-1 px-4'>
                           <span className='font-[700] text-primaryColor text-2xl'>f</span>
                         </button>
@@ -191,7 +191,7 @@ function Login(props) {
                             <div className='mt-4 w-full lg:px-[4rem] text-right'>
                               <small className='italic'>
                                    Don't have an account? 
-                                  <Link  className='ml-2 text-primaryColor' to="/signUp">Sign Up</Link>
+                                  <Link className='ml-2 text-primaryColor' to="/signUp">Sign Up</Link>
                                   </small>
                             </div>
 

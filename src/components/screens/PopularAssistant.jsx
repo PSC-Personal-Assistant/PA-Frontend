@@ -15,6 +15,7 @@ const PopularAssistant = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -46,7 +47,11 @@ const PopularAssistant = () => {
   const slider = useRef()
 
   return (
-    <div className="contain mb-16">
+    <div className="contain mb-16 relative">
+        {/* <div className='absolute w-full flex justify-between'>
+          <button onClick={() => slider.current.slickPrev()}>Previous</button>
+          <button onClick={() => slider.current.slickNext()}>Next</button>          
+        </div> */}
       <div>
         <Slider ref={slider} {...settings} className="">
           {[1, 2, 3, 4, 5, 6].map((item, index) => (
@@ -57,7 +62,7 @@ const PopularAssistant = () => {
                 {/* Overlay */}
                 <div className="absolute top-0 left-0 w-full h-full z-20 bg-black opacity-10"></div>
                 <div className="absolute top-0 left-0 z-30 p-4 text-white flex flex-col h-full w-full justify-between ">
-                  <div>
+                  <div className='space-y-1'>
                     <p className="text-[#fff]">Michael</p>
                     <p className='font-[100] text-[12px]'>Writer</p>                    
                   </div>
@@ -85,6 +90,7 @@ const PopularAssistant = () => {
             </div>
           ))}
         </Slider>
+        
       </div>
     </div>
   );

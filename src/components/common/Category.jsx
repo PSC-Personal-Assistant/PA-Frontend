@@ -1,3 +1,4 @@
+import { Search2Icon } from '@chakra-ui/icons'
 import Aos from 'aos'
 import React, { useEffect } from 'react'
 
@@ -61,7 +62,7 @@ const Category = () => {
         <p className='text-[#12444A] text-[12px]'>Browse Category</p>
         <div className='flex bg-slate-100 mt-6 shadow-md md:w-[60%] lg:w-[40%] h-[50px] rounded-md' >
             <input className='bg-none w-[88%] h-full  outline-none p-4 rounded-l-md' placeholder='Search Category' type="text" />
-            <button className='bg-[#D14F0D] color-white w-[12%] h-full rounded-r-md'></button>
+            <button className='bg-[#D14F0D] text-[#fff] text-opacity-30 color-white w-[12%] h-full rounded-r-md'><Search2Icon/></button>
           </div>
           <div className='flex flex-wrap justify-between md:grid grid-col-2 md:grid-cols-3 lg:grid-cols-4 w-full py-3'>
 

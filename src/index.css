@@ -44,6 +44,10 @@
 
 }
 
+.slick-prev, .slick-next{
+  z-index: 99;
+  color: black !important;
+}
 /* box-shadow: 1px 4px 7px -1px #0000003D; */
 
 

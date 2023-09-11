@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Vector from '../../assets/hero-shape.png'
 import HERO1 from '../../assets/heroImg.png'
 import HERO2 from '../../assets/heroImg2.png'
+import { Search2Icon } from '@chakra-ui/icons'
 
 const Hero = () => {
   return (
@@ -21,7 +22,7 @@ const Hero = () => {
 
           <div className='flex bg-slate-100 mt-6 shadow-md w-full h-[50px] rounded-md' >
             <input className='bg-none w-[88%] h-full  outline-none p-4 rounded-l-md' type="text" />
-            <button className='bg-[#D14F0D] color-white w-[12%] h-full rounded-r-md'></button>
+            <button className='bg-[#D14F0D] text-[#fff] text-opacity-25 w-[12%] h-full rounded-r-md'><Search2Icon/></button>
           </div>
 
           <div className='flex space-x-3'>

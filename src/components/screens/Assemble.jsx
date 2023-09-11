@@ -1,5 +1,7 @@
 import React from 'react'
 import MarkIcon from '../../assets/OrMk.png'
+import ASS1 from '../../assets/assemble1.png'
+import ASS2 from '../../assets/assemble2.png'
 
 const Assemble = () => {
 
@@ -23,9 +25,14 @@ const Assemble = () => {
 
   return (
     <div className='px-[1rem] md:px-[2rem]'>
-        <div className='bg-[#1E1A1A] flex rounded-md p-4 md:p-10'>
-            <div className='hidden md:block flex-1'></div>
-            <div className='flex-1 space-y-4'>
+        <div className='bg-[#1E1A1A] flex rounded-md p-4 md:p-10 flex-col lg:flex-row'>
+            <div className='hidden md:flex justify-center items-center flex-1 '>
+              <div className='lg:mr-[-8rem] z-10'><img src={ASS2}  alt="" /></div>
+              <div className='hidden lg:block'><img src={ASS1} alt="" className='z-2' /></div>
+              
+              
+            </div>
+            <div className='flex-1 space-y-4 md:px-10'>
                 <h3 className='text-[#FFF] font-[700] text-[20px] md:text-[28px] lg:w-[80%] '>
                     Assembly a <span className='text-[#D14F0D]'>Team</span> of <span className='text-[#D14F0D]'>Experts</span> to <span className='text-[#D14F0D]'></span>Work on <span className='text-[#D14F0D]'>Your Project</span>
                 </h3>

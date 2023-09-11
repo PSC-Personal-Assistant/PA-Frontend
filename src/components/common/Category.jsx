@@ -1,4 +1,5 @@
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
 
 
 const data = [
@@ -47,8 +48,13 @@ const data = [
 
 
 const Category = () => {
+
+  useEffect(()=>{
+    Aos.init({duration:1500})
+})
+
   return (
-    <section className="py-12 bg-[#12444A] bg-opacity-10 mt-[3rem]">
+    <section data-aos="fade-zoom-in" data-aos-offset="150" data-aos-easing="ease-in-sine" data-aos-duration="600" className="py-12 bg-[#12444A] bg-opacity-10 mt-[3rem]">
         {/* header */}
         <div  className='contain'>
         <h3 className='text-[#12444A] text-[28px] font-[700]'>Get Literally any form of Assistant</h3>
@@ -61,7 +67,7 @@ const Category = () => {
 
             {
               data.map((item, index)=>
-                <button key={index} className="bg-white shadow-md text-left hover:bg-[#12444A] text-[12px] text-[#363836] px-4 hover:text-[#fff] h-[80px] w-[9rem] sm:w-[12rem] md:w-[200px] rounded-md my-2 p-2 border border-solid ">
+                <button key={index} className="bg-white shadow-md text-left hover:bg-[#12444A] text-[12px] text-[#363836] hover:text-[#fff] h-[80px] w-[9rem] sm:w-[12rem] md:w-[200px] rounded-md my-2 p-2 border border-solid ">
                   <div className='flex item-center gap-1'>
                               <div className='flex items-center justify-center'>
                                   <div className='rounded-full bg-[#393939] w-[10px] h-[10px]'></div>

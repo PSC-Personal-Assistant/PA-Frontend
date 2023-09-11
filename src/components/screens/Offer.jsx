@@ -25,8 +25,8 @@ const Offer = () => {
 
   return (
     <div className='contain flex my-10 lg:my-16'>
-      <div className='w-[100%] lg:w-[55%] flex items-center'>
-        <div className='bg-[#3082A9] p-5 md:p-10 h-full md:h-[90%] w-full'>
+      <div className='w-[100%] lg:w-[55%] flex items-center' data-aos="zoom-out" data-aos-offset="150" data-aos-easing="ease-in-sine" data-aos-duration="600">
+        <div className='bg-[#3082A9] p-5 md:p-10 h-full md:h-[90%] w-full' >
             <p className='text-white italic font-[100] text-[20px] md:text-[28px] lg:w-[80%]'>
                 Offer Assistance <span className=' font-[400]'>to who Need Your</span> Help
             </p>
@@ -52,7 +52,7 @@ const Offer = () => {
 
         </div>
       </div>
-      <div className='hidden lg:block w-[45%] shadow-left'>
+      <div className='hidden lg:block w-[45%] shadow-left' data-aos="slide-left" data-aos-offset="150" data-aos-easing="ease-in" data-aos-duration="600">
         <img className='w-full h-full' src={OfferImg} alt="Offers" />
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Build = () => {
   return (
-    <div className=' px-4 md:px-[2rem]'>
+    <div className=' px-4 md:px-[2rem]' data-aos="fade-zoom-in" data-aos-offset="150" data-aos-easing="ease-in-sine" data-aos-duration="600">
         <div style={{backgroundImage:"url('/images/buildBG.png')", backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover'}} className='flex flex-col md:flex-row rounded-md py-10 px-5 md:p-10 items-center'>
             <div className='flex-1 space-y-4'>
                 <p className='text-white font-[400] text-[18px] md:text-[28px] text-center md:text-left lg:w-[80%]'>

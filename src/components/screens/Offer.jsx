@@ -52,7 +52,7 @@ const Offer = () => {
 
         </div>
       </div>
-      <div className='hidden lg:block w-[45%] shadow-left' data-aos="slide-left" data-aos-offset="150" data-aos-easing="ease-in" data-aos-duration="600">
+      <div className='hidden lg:block w-[45%] shadow-left' data-aos="flip-in" data-aos-offset="150" data-aos-easing="ease-in" data-aos-duration="600">
         <img className='w-full h-full' src={OfferImg} alt="Offers" />
       </div>
     </div>

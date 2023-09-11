@@ -8,6 +8,7 @@ import Assemble from './screens/Assemble'
 import Offer from './screens/Offer'
 import Build from './screens/Build'
 import Locate from './screens/Locate'
+import PopularAssistant from './screens/PopularAssistant'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Nav />
       <Hero/>
       <Cat/>
+      <PopularAssistant/>
       <Assemble/>
       <Category/>
       <Offer/>

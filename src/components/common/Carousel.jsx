@@ -14,11 +14,11 @@ const Carousel = ({children: slides, autoSlide=false, autoSlideInterval=3000}) =
         setCurr((curr)=>(curr === 0 ? slides.length + 1 : curr + 1))
     }
 
-    useEffect(()=>{
-        if(!autoSlide) return
-        const slideInterval = setInterval(next, autoSlideInterval)
-        return () => clearInterval(slideInterval)
-    })
+    // useEffect(()=>{
+    //     if(!autoSlide) return
+    //     const slideInterval = setInterval(next, autoSlideInterval)
+    //     return () => clearInterval(slideInterval)
+    // })
 
   return (
     <div className='relative overflow-hidden'>
@@ -40,7 +40,10 @@ const Carousel = ({children: slides, autoSlide=false, autoSlideInterval=3000}) =
       <div>
         <div className='flex items-center justify-center'>
             {slides.map((item, index)=>{
-                <div className={`transition-all w-3 h-3 bg-white rounded-full ${curr === i ? 'p-2': 'bg-opacity-50'}`} ></div>
+                <div key={index} className={`transition-all w-3 h-3 bg-white rounded-full ${curr === 1 ? 'p-2': 'bg-opacity-50'}`} >
+                  <p>{item.name}</p>
+                  <p>{item.skill}</p>
+                </div>
             })}
         </div>
       </div>
